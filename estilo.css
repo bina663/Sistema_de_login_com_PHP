@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.conteiner{
+    border:1px solid red;
+    padding:15px 10px;
+}
+form{
+    text-align: center;
+}
+input{
+    padding: 5px;
+    outline: none;
+    margin-bottom:20px;
+}
+.msg_php{
+    color:red;
+    padding:10px 0px;
+}
