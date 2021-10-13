@@ -1,7 +1,7 @@
-<?
+<?php
     session_start();
 ?>
-<!DOCTYPE htlml>
+<!DOCTYPE html>
 <html lang='pt-br'>
 <head>
     <meta charset="UTF-8">
@@ -12,21 +12,21 @@
     <title>Login</title>
 </head>
 <body>
-    <?
-        require_once('header.php')
+    <?php
+        require_once('site/header.php');
     ?>
     <div class='container p-5'>
-        <form method='post' action='valida_login.php'>
+        <form action='sistema/valida_login.php' method='post'>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Seu nome</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='user'>  
-                <? if(isset($_GET['login']) && $_GET["login"] == "erro"){ ?>
+                <label for="exampleInputEmail1" class="form-label">Seu e-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='user' placeholder="Example@gmail.com">  
+                <?php if(isset($_GET['login']) && $_GET["login"] == "erro"){ ?>
                     <div class="form-text text-danger">Dados Invalidos!</div>
-                <? } ?>
+                <?php }; ?>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Sua senha senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name='senha'>
+                <label for="exampleInputPassword1" class="form-label">Sua senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name='senha' placeholder="******">
             </div>
             <div class='mb-3'>
                 <a href='cadastro.php' class='btn btn-primary'>Cadastro</a>

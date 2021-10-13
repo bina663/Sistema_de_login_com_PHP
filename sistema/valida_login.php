@@ -5,7 +5,7 @@
         if($_POST["user"] == $banco["user"] && $_POST['senha'] == $banco['senha']){
             $autenticacao = true;
         }else{
-            header("location:index.php?login=erro");
+            header("location:../index.php?login=erro");
         }
     }
     if($autenticacao){

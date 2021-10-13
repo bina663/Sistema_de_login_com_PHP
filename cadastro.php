@@ -1,4 +1,4 @@
-<!DOCTYPE htlml>
+<!DOCTYPE html>
 <html lang='pt-br'>
 <head>
     <meta charset="UTF-8">
@@ -9,24 +9,24 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <?
-        require_once('header.php');
+    <?php
+        require_once('site/header.php');
     ?>
     <div class='container p-5'>
-        <form method='post' action='valida_dados.php'>
+        <form method='post' action='sistema/valida_dados.php'>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Ponha seu nome</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='user'>
-                <? if(isset($_GET['dados']) && $_GET["dados"] == "vazio"){ ?>
+                <label for="exampleInputEmail1" class="form-label">Ponha seu e-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='user' placeholder="Example@gmail.com">
+                <?php if(isset($_GET['dados']) && $_GET["dados"] == "vazio"){ ?>
                     <div class="form-text text-danger">Dados Invalidos!</div>
-                <? } ?>
-                <? if(isset($_GET['dados']) && $_GET["dados"] == "ja_existente"){ ?>
+                <?php }; 
+                if(isset($_GET['dados']) && $_GET["dados"] == "ja_existente"){ ?>
                     <div class="form-text text-danger">Usuario ja existente</div>
-                <? } ?>
+                <?php }; ?>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Cria uma senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name='senha'>
+                <input type="password" class="form-control" id="exampleInputPassword1" name='senha' placeholder="*****" maxlength="6" minlength="5">
             </div>
             <div class='mb-3'>
                 <a href='index.php' class='btn btn-primary'>Voltar</a>

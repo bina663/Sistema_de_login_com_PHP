@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['autenticacao']) || $_SESSION['autenticacao'] != "sim"){
-        header("location:index.php");
+        header("location:../index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -15,8 +15,8 @@
     <title>Sucesso</title>
 </head>
 <body>
-    <?
-        require_once('header.php');
+    <?php
+        require_once('../site/header.php');
     ?>
     <div class='container'>
         <h1 class='text-center p-5 display-4 text-success'>Login efetuado com Sucesso</h1>
